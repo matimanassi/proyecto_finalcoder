@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Profile</h2>
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>First name:</strong> {{ user.first_name }}</p>
+    <p><strong>Last name:</strong> {{ user.last_name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Bio:</strong> {{ profile.bio }}</p>
+    <p><strong>Location:</strong> {{ profile.location }}</p>
+    <p><strong>Birth Date:</strong> {{ profile.birth_date }}</p>
+    {% if profile.avatar %}
+        <img src="{{ profile.avatar.url }}" class="img-thumbnail" alt="Avatar">
+    {% else %}
+        <p>No avatar uploaded.</p>
+    {% endif %}
+</div>
+{% endblock %}
